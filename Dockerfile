@@ -2,7 +2,8 @@ FROM python:latest
 
 # Install system dependencies needed for building packages
 RUN apt update && apt upgrade -y && \
-    apt install -y git curl python3-pip ffmpeg aria2 build-essential python3-dev liblz4-dev libssl-dev libffi-dev cmake pkg-config && \
+    apt install -y git curl python3-pip ffmpeg aria2 \
+    build-essential python3-dev liblz4-dev libssl-dev libffi-dev cmake pkg-config ninja-build && \
     rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip, setuptools, and wheel
